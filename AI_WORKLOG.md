@@ -119,4 +119,50 @@ RST is significantly more complex than Markdown for regex-based parsing. You nee
 
 ---
 
+---
+
+## Phase 4 — Chunking
+
+**Date:** 2026-09-30
+**Task:** Split processed documents into overlapping text chunks for embedding
+**AI Tool:** Kiro
+
+**What I found by inspecting documents.json first:**
+- 33 documents ranging from 855 to 36,298 chars
+- Only 104 paragraph blocks total (very low — RST directive removal collapsed many sections)
+- Many "paragraphs" are 3,000–21,000 chars — pure paragraph-aware chunking would produce huge chunks
+- The right strategy must handle both tiny docs (855 chars) and massive blocks (21,463 chars)
+
+**Chunking strategy chosen: line-aware greedy chunking**
+- Split text into individual lines
+- Greedily accumulate lines until the chunk would exceed `chunkSize`
+- When full, save the chunk and start the next one with the last `overlap` characters as a prefix
+- Single lines longer than `chunkSize` are split at the boundary (handles code blocks)
+- This respects line/sentence boundaries — never cuts in the middle of a word
+
+**Why character-based, not token-based:**
+- Token-based requires calling the OpenAI tokenizer (adds a dependency, needs API or tiktoken library)
+- Characters are simpler, deterministic, and explainable in interviews
+- At ~4 chars/token for English text, 800 chars ≈ 200 tokens — well within limits
+- Documented explicitly so there is no confusion
+
+**Configuration — all values are configurable:**
+- Command-line: `--chunk-size`, `--overlap`, `--output`
+- Environment variables: `CHUNK_SIZE`, `CHUNK_OVERLAP`
+- No hardcoded values inside the chunking function
+
+**Results:**
+- Baseline (800/100): 300 chunks, avg 734 chars, min 99, max 799
+- Experiment A (300/50): 860 chunks, avg 267 chars
+- Experiment B (800/100): 300 chunks (same as baseline — confirmed identical)
+- Reproducibility: ✅ confirmed via MD5 hash comparison
+
+**Problems encountered:**
+None. The data inspection before writing code was the key — discovering that paragraph-splitting alone was insufficient prevented a wasted implementation.
+
+**Lesson:**
+Always measure the actual data distribution before choosing a chunking strategy. The word "paragraph-aware" sounds like the right approach, but in this case the paragraphs were too large. Line-aware greedy chunking is a more robust general solution.
+
+---
+
 <!-- New entries will be added as each phase is completed -->

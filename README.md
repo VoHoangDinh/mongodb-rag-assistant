@@ -11,7 +11,7 @@ A RAG-based (Retrieval-Augmented Generation) knowledge assistant built on MongoD
 | 1 | Environment + Git | ✅ Done |
 | 2 | Dataset acquisition | ✅ Done |
 | 3 | Document parsing | ✅ Done |
-| 4 | Chunking | ⬜ |
+| 4 | Chunking | ✅ Done |
 | 5 | Embedding | ⬜ |
 | 6 | MongoDB Vector Search | ⬜ |
 | 7 | Retrieval | ⬜ |
@@ -57,3 +57,35 @@ Parsing results:
 - Min: 855 chars (text-search)
 - Max: ~36,000 chars (change-streams)
 - Output: `data/processed/documents.json`
+
+## Chunking
+
+Each document is split into overlapping text chunks using a line-aware greedy algorithm.
+
+Chunk size is measured in **characters** (not tokens). At ~4 chars/token, 800 chars ≈ 200 tokens.
+
+Baseline configuration:
+- Chunk size: 800 characters
+- Overlap: 100 characters
+- Total chunks: 300
+- Avg chunk length: 734 chars
+- Min: 99 chars | Max: 799 chars
+
+Experiment configurations (for Phase 14):
+
+| Config | Chunk size | Overlap | Total chunks |
+|--------|-----------|---------|--------------|
+| A (small) | 300 chars | 50 chars | 860 |
+| B (large) | 800 chars | 100 chars | 300 |
+
+Run:
+```bash
+# Baseline
+node scripts/chunk-docs.js --chunk-size 800 --overlap 100
+
+# Experiment A
+node scripts/chunk-docs.js --chunk-size 300 --overlap 50 --output data/processed/chunks-300.json
+
+# Experiment B
+node scripts/chunk-docs.js --chunk-size 800 --overlap 100 --output data/processed/chunks-800.json
+```
