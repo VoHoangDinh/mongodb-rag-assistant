@@ -9,7 +9,7 @@ A RAG-based (Retrieval-Augmented Generation) knowledge assistant built on MongoD
 | Phase | Description | Status |
 |-------|-------------|--------|
 | 1 | Environment + Git | ✅ Done |
-| 2 | Dataset acquisition | ⬜ |
+| 2 | Dataset acquisition | ✅ Done |
 | 3 | Document parsing | ⬜ |
 | 4 | Chunking | ⬜ |
 | 5 | Embedding | ⬜ |
@@ -27,3 +27,18 @@ A RAG-based (Retrieval-Augmented Generation) knowledge assistant built on MongoD
 | 17 | Final testing + demo | ⬜ |
 
 This README will be fully written once the project is complete.
+
+---
+
+## Dataset
+
+- Source: [MongoDB Documentation v8.0](https://github.com/mongodb/docs) (official repository)
+- Acquisition: sparse checkout of `content/manual/v8.0/source/` — no full history cloned
+- Number of documents: **33**
+- Total text: ~300,000 characters
+- License: [Creative Commons](https://github.com/mongodb/docs/blob/master/LICENSE)
+
+Topics covered: Introduction, Databases & Collections, Documents, Query API, CRUD, Query Optimization,
+Indexes (Single, Compound, Multikey, Text), Aggregation, Aggregation Pipeline, Aggregation Optimization,
+Data Modeling (embedding, referencing, best practices, schema validation), Transactions, Replication,
+Sharding, Security, Authentication, Change Streams, Time Series, Geospatial Queries, Text Search.
