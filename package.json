@@ -1,0 +1,15 @@
+{
+  "name": "mongodb-rag-assistant",
+  "version": "1.0.0",
+  "description": "RAG-based knowledge assistant using MongoDB documentation",
+  "private": true,
+  "scripts": {
+    "download": "node scripts/download-docs.js",
+    "parse": "node scripts/parse-docs.js",
+    "ingest": "node scripts/ingest.js",
+    "evaluate": "node scripts/evaluate.js",
+    "experiment": "node scripts/experiment.js",
+    "backend": "node backend/src/app.js",
+    "frontend": "npm run dev --prefix frontend"
+  }
+}

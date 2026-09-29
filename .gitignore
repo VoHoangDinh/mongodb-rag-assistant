@@ -1,0 +1,25 @@
+# Environment - NEVER commit this
+.env
+
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MongoDB docs clone (large, do not commit)
+mongodb-docs-repo/
+
+# Keep CSV results, skip large JSON raw results
+evaluation/results/*.json
+!evaluation/results/*.csv
