@@ -67,4 +67,56 @@ Never assume a GitHub repo's file structure. Always inspect CLAUDE.md, README, o
 
 ---
 
+---
+
+## Phase 3 — Document Parsing
+
+**Date:** 2026-09-30
+**Task:** Parse raw RST files from data/raw/ into clean text in data/processed/documents.json
+**AI Tool:** Kiro
+
+**What I found by inspecting the raw files first:**
+- Files are in RST (reStructuredText) format, not Markdown
+- Every file has metadata directives: `.. facet::`, `.. meta::`, `.. contents::`, `.. default-domain::`
+- Navigation boilerplate: `.. toctree::`, `.. seealso::`, `.. cta-banner::`
+- External file references: `.. include:: /includes/...` (we don't have those files)
+- Code blocks use `.. code-block:: javascript`
+- Inline cross-references: `:ref:`, `:doc:`, `:method:`, `:term:`, `:pipeline:`
+- Inline code: `` ``value`` `` double backticks
+- Title decoration: `====` overlines/underlines
+- `.. composable-tutorial::` blocks with nested `.. selected-content::` and `.. literalinclude::` blocks
+
+**Implementation decisions:**
+1. Strip all pure metadata directives (meta, facet, contents, default-domain) — zero RAG value
+2. Strip toctree blocks — pure navigation
+3. Strip include/literalinclude references — the referenced files aren't in our dataset
+4. Convert RST title underlines to plain text — keeps semantic meaning
+5. Strip RST cross-reference roles but keep the human-readable label (`:ref:\`Aggregation\`` → `Aggregation`)
+6. Strip double-backtick inline code markup but keep the text value
+7. Preserve all paragraphs, lists, code block content, headings
+
+**Problems encountered:**
+
+Problem 1: Nested directives inside `composable-tutorial` blocks
+- The outer block remover removed `.. composable-tutorial::` but left behind the indented `.. selected-content::` and `.. literalinclude::` lines
+- Fix: Added a second pass with `^[ \t]+\.\.\s+directive::` pattern to catch indented directives
+
+Problem 2: `.. include::` lines inside bullet list items (`- .. include::`)
+- The bullet makes it not a "top-level directive" — it has a dash before the `..`
+- Fix: Added a specific pattern `^[ \t]*[-*]\s+\.\.\s+include::` to strip these
+
+Problem 3: RST comments (`.. See SERVER-9562` etc.)
+- These are valid RST comments but look like directives. The pattern `.. ` followed by text without `::` identifies them.
+- Fix: Pattern `^[ \t]*\.\.\s+(?![_a-zA-Z][a-zA-Z0-9_-]*::)[^\n]*` strips all RST comments
+
+**Final verification:**
+- Ran leak check across all 33 processed documents
+- Zero RST directive patterns found in any document
+- All 33 documents successfully parsed, zero failed
+
+**What I learned:**
+RST is significantly more complex than Markdown for regex-based parsing. You need multiple passes because directives can be nested and appear in unexpected places (bullet list items, inside other directive bodies). The lesson: always scan the raw files first, then write targeted patterns for what you actually find — not what you expect.
+
+---
+
 <!-- New entries will be added as each phase is completed -->

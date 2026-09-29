@@ -10,7 +10,7 @@ A RAG-based (Retrieval-Augmented Generation) knowledge assistant built on MongoD
 |-------|-------------|--------|
 | 1 | Environment + Git | ✅ Done |
 | 2 | Dataset acquisition | ✅ Done |
-| 3 | Document parsing | ⬜ |
+| 3 | Document parsing | ✅ Done |
 | 4 | Chunking | ⬜ |
 | 5 | Embedding | ⬜ |
 | 6 | MongoDB Vector Search | ⬜ |
@@ -42,3 +42,18 @@ Topics covered: Introduction, Databases & Collections, Documents, Query API, CRU
 Indexes (Single, Compound, Multikey, Text), Aggregation, Aggregation Pipeline, Aggregation Optimization,
 Data Modeling (embedding, referencing, best practices, schema validation), Transactions, Replication,
 Sharding, Security, Authentication, Change Streams, Time Series, Geospatial Queries, Text Search.
+
+## Parsing
+
+Raw documents are in RST (reStructuredText) format from the official MongoDB docs repo.
+The parser (`scripts/parse-docs.js`) strips RST directives, cross-reference markup, title decorations,
+toctree navigation, and include references — while preserving all semantic content.
+
+Parsing results:
+- Raw documents: 33
+- Processed documents: 33
+- Failed: 0
+- Average characters: ~6,100
+- Min: 855 chars (text-search)
+- Max: ~36,000 chars (change-streams)
+- Output: `data/processed/documents.json`
