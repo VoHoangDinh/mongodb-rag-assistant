@@ -479,4 +479,34 @@ Validation    : ✅ PASS
 
 ---
 
+---
+
+## Phase 10D-6 — Experiment Comparison Report
+
+**Date:** 2026-09-30
+**Task:** Generate `comparison.md` from actual retrieval result files
+**AI Tool:** Kiro
+
+**All numbers taken from actual result files — nothing hard-coded.**
+
+Verification script confirmed 13/13 metric values in the report match the JSON files exactly.
+
+**Key findings (retrieval-only, 36 in-scope questions):**
+
+| Metric | chunk-300 | chunk-800 |
+|--------|-----------|-----------|
+| Hit@1 | 86.1% | 97.2% |
+| Hit@3 | 97.2% | 100.0% |
+| Hit@5 | 97.2% | 100.0% |
+| Avg latency | 566ms | 524ms |
+| P95 latency | 583ms | 538ms |
+
+**Root cause of chunk-300 misses:**
+- Q005 (total miss): "$match" question retrieved optimization doc instead of aggregation intro. Small chunks fragment context — the 300-char optimization chunks mention $match many times without the surrounding introductory explanation.
+- Q013, Q020, Q027, Q033 (Hit@1 miss, Hit@3/5 hit): parent document ranked above specific child doc. Small chunks from broad documents (introduction, replication, sharding) match query keywords frequently, outranking more specific but shorter chunks.
+
+**No universal conclusion made**: comparison.md explicitly states that answer quality has not been measured and no claim is made about which chunk size is universally better.
+
+---
+
 <!-- New entries will be added as each phase is completed -->

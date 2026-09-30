@@ -145,7 +145,22 @@ Each experiment stores its own `results.json` and `metrics.json` so they can be 
 
 ---
 
-## Why the Same Questions Must Be Used
+## Comparison Report
+
+After running both experiments, see the full comparison:
+`evaluation/experiments/comparison.md`
+
+Summary of retrieval-only results (36 in-scope questions):
+
+| Metric | chunk-300 | chunk-800 |
+|--------|-----------|-----------|
+| Hit@1 | 86.1% (31/36) | 97.2% (35/36) |
+| Hit@3 | 97.2% (35/36) | 100.0% (36/36) |
+| Hit@5 | 97.2% (35/36) | 100.0% (36/36) |
+| Avg latency | 566ms | 524ms |
+| P95 latency | 583ms | 538ms |
+
+> These are retrieval-only results. End-to-end answer quality evaluation is separate.
 
 Using different questions for each experiment would confuse difficulty effects with chunk-size effects.
 All 40 questions from `evaluation/questions.json` must be run for both configurations.
@@ -172,3 +187,8 @@ Preliminary metrics on partial runs should not be used to draw final conclusions
 
 Mixing results from different chunk configurations would make the comparison meaningless.
 Each experiment stores its own `results.json` and `metrics.json` so they can be compared cleanly.
+
+## Why the Same Questions Must Be Used
+
+Using different questions for each experiment would confuse difficulty effects with chunk-size effects.
+All 40 questions from `evaluation/questions.json` must be run for both configurations.
