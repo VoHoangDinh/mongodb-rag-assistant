@@ -13,7 +13,7 @@ A RAG-based (Retrieval-Augmented Generation) knowledge assistant built on MongoD
 | 3 | Document parsing | ✅ Done |
 | 4 | Chunking | ✅ Done |
 | 5 | Embedding | ✅ Done |
-| 6 | MongoDB Vector Search | ⬜ |
+| 6 | MongoDB Atlas + Vector Search | ✅ Done |
 | 7 | Retrieval | ⬜ |
 | 8 | LLM generation | ⬜ |
 | 9 | Citation + insufficient info | ⬜ |
@@ -111,3 +111,44 @@ node backend/src/services/embedding.service.js
 ```
 
 Requires `GEMINI_API_KEY` in `.env`. Get your key at https://aistudio.google.com/app/apikey
+
+## MongoDB Atlas
+
+Database and collection for storing chunks and their embedding vectors.
+
+- Database: `mongodb_rag`
+- Collection: `rag_chunks`
+- Documents: 300 (one per chunk)
+- Each document stores: chunkId, text, embedding (3072 floats), and all metadata
+
+Import command:
+```bash
+node backend/src/services/import-embeddings.service.js
+```
+
+Import is idempotent — running it twice will not create duplicates (uses `replaceOne` with `upsert: true`).
+
+## Vector Search Index
+
+After importing, create the Vector Search index in MongoDB Atlas UI.
+
+Full instructions: [`docs/vector-search-index.md`](docs/vector-search-index.md)
+
+Index JSON definition:
+```json
+{
+  "fields": [
+    {
+      "type": "vector",
+      "path": "embedding",
+      "numDimensions": 3072,
+      "similarity": "cosine"
+    }
+  ]
+}
+```
+
+- Index name: `vector_index`
+- Field: `embedding`
+- Dimensions: `3072` (must match `gemini-embedding-001` output exactly)
+- Similarity: `cosine`

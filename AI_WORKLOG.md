@@ -211,4 +211,45 @@ The `@google/genai` JS SDK accepts an array of strings directly in `contents` �
 
 ---
 
+---
+
+## Phase 6 — MongoDB Atlas Import + Vector Search Index
+
+**Date:** 2026-09-30
+**Task:** Import 300 embeddings into MongoDB Atlas and document the Vector Search index setup
+**AI Tool:** Kiro
+
+**MongoDB Atlas setup:**
+- Cluster already created and connection tested before this phase
+- `mongodb` Node.js driver already installed (`^7.7.0`)
+- Connection string in `.env` as `MONGODB_URI`
+
+**Connection module (`backend/src/config/mongodb.js`):**
+- Module-level singleton client — created once, reused across calls
+- Logs only the hostname, never the full URI (which contains credentials)
+- `getDb()` / `closeConnection()` exported for use by any service
+
+**Import strategy:**
+- `bulkWrite` with `replaceOne` + `upsert: true` per chunkId
+- A single `bulkWrite` call is faster than 300 individual operations
+- Idempotent: safe to re-run after any re-embedding
+- Pre-import validation catches: missing chunkId, duplicate chunkId in input, empty embedding, inconsistent dimensions
+- Post-import validation queries MongoDB directly: `countDocuments`, duplicate chunkId aggregation, missing embedding count
+
+**Vector Search index:**
+- Dimension: 3072 (confirmed from actual `embeddings.json` output)
+- Similarity: cosine (standard for text embedding comparison)
+- Must be created manually in Atlas UI — cannot be created programmatically on free tier without Atlas Admin API
+- Index name must match `MONGODB_VECTOR_INDEX=vector_index` in `.env`
+- Documented in `docs/vector-search-index.md`
+
+**Problems encountered:**
+- README status table had `| 6 | MongoDB Vector Search |` not `| 6 | MongoDB Atlas + Vector Search |` — minor naming inconsistency, fixed.
+- Atlas docs pages returned only navigation HTML during fetch — used known stable index JSON format (unchanged since Atlas Vector Search GA in 2023).
+
+**Lesson:**
+`bulkWrite` with upsert is the correct pattern for idempotent data imports. A plain `insertMany` would throw duplicate key errors on re-runs. Always design data pipelines to be safely re-runnable.
+
+---
+
 <!-- New entries will be added as each phase is completed -->
