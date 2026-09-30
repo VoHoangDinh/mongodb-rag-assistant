@@ -533,4 +533,36 @@ Verification script confirmed 13/13 metric values in the report match the JSON f
 
 ---
 
+---
+
+## Model Switch: gemini-flash-latest → gemini-3.5-flash-lite
+
+**Date:** 2026-09-30
+**Task:** Switch generation model due to quota exhaustion on gemini-flash-latest
+**AI Tool:** Kiro
+
+**Change:** `GENERATION_MODEL=gemini-3.5-flash-lite` in `.env` and `.env.example`
+
+**Problem encountered:** After updating GENERATION_MODEL, generation.service.js was
+returning the insufficient-information sentinel even for clearly in-scope questions
+(e.g. "What is a compound index in MongoDB?"). The retrieval was returning correct
+results (scores 0.88–0.89) but the model was still triggering the fallback.
+
+**Diagnosis:** The verbose multi-rule SYSTEM_PROMPT was causing gemini-3.5-flash-lite
+to be overly conservative. The rule "If the context does not contain enough information...
+respond with exactly: [sentinel]" was being applied too broadly by the smaller model.
+Testing with a simplified prompt confirmed the model produces correct answers when the
+instruction is less restrictive.
+
+**Fix:** Rewrote SYSTEM_PROMPT to be more directive — lead with "use the excerpts to
+write a helpful answer", and reserve the sentinel for "only if no relevant information
+at all". This unblocks in-scope questions while still correctly handling out-of-scope ones.
+
+**Verified:**
+- In-scope (compound index): ✅ correct answer with 2 citations, 2829ms total
+- Out-of-scope (capital of France): ✅ insufficient sentinel, 0 citations, 2623ms
+- No 429 errors
+
+---
+
 <!-- New entries will be added as each phase is completed -->

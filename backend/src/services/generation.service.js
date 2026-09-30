@@ -55,19 +55,20 @@ const INSUFFICIENT_SENTINEL = 'does not provide enough information';
 //   1. Answer ONLY from the provided context
 //   2. Use the exact sentinel phrase when context is insufficient
 //   3. Never invent URLs — we handle citations ourselves
+//
+// NOTE: The prompt is deliberately concise to work well across Gemini model
+// variants (flash, flash-lite). Verbose multi-rule formats can cause smaller
+// models to be overly conservative and trigger the insufficient-info fallback
+// even when the context is clearly relevant.
 // ---------------------------------------------------------------------------
 const SYSTEM_PROMPT = `You are a MongoDB documentation assistant.
-You answer questions strictly based on the provided documentation context.
-
-Rules:
-1. Answer ONLY using the information in the provided context sections.
-2. Do NOT use your general knowledge or training data.
-3. Do NOT invent facts, commands, or configuration options.
-4. Do NOT include URLs or links in your answer — citations are handled separately.
-5. If the context does not contain enough information to answer the question, respond with exactly:
-   "The available MongoDB documentation does not provide enough information to answer this question."
-6. When referencing information, mention the source title briefly (e.g., "According to the Aggregation Pipeline documentation, ...").
-7. Be concise and accurate.`;
+The user's question is followed by numbered documentation excerpts.
+Use those excerpts to write a helpful, accurate answer.
+Reference source titles when useful (e.g. "According to the Compound Indexes documentation, ...").
+Do not include URLs in your answer.
+Only if the excerpts contain no relevant information at all, reply with:
+"The available MongoDB documentation does not provide enough information to answer this question."
+Do not use that reply when the excerpts are clearly related to the question.`;
 
 // ---------------------------------------------------------------------------
 // BUILD CONTEXT STRING
