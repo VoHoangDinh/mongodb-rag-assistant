@@ -14,7 +14,7 @@ A RAG-based (Retrieval-Augmented Generation) knowledge assistant built on MongoD
 | 4 | Chunking | ✅ Done |
 | 5 | Embedding | ✅ Done |
 | 6 | MongoDB Atlas + Vector Search | ✅ Done |
-| 7 | Retrieval | ⬜ |
+| 7 | Retrieval | ✅ Done |
 | 8 | LLM generation | ⬜ |
 | 9 | Citation + insufficient info | ⬜ |
 | 10 | Backend API | ⬜ |
@@ -152,3 +152,27 @@ Index JSON definition:
 - Field: `embedding`
 - Dimensions: `3072` (must match `gemini-embedding-001` output exactly)
 - Similarity: `cosine`
+
+## Retrieval
+
+The retrieval service embeds the user question and queries MongoDB Atlas Vector Search.
+
+- File: `backend/src/services/retrieval.service.js`
+- Query embedding: `taskType: RETRIEVAL_QUERY` (paired with `RETRIEVAL_DOCUMENT` used at ingestion)
+- `numCandidates`: `topK × 10` for better recall
+- Returns: `chunkId`, `documentId`, `title`, `source`, `sourceUrl`, `category`, `text`, `score`
+- The raw embedding vector is excluded from results
+
+Run the retrieval test:
+```bash
+node backend/src/services/test-retrieval.js
+```
+
+Or retrieve a single question:
+```bash
+node backend/src/services/retrieval.service.js "What is an aggregation pipeline?"
+```
+
+Observed scores from test run:
+- On-topic questions: scores 0.86 – 0.90 ✅
+- Out-of-scope question ("president of France"): scores ~0.76 — clearly lower, LLM can detect this

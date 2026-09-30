@@ -252,4 +252,42 @@ The `@google/genai` JS SDK accepts an array of strings directly in `contents` �
 
 ---
 
+---
+
+## Phase 7 — Retrieval
+
+**Date:** 2026-09-30
+**Task:** Implement vector search retrieval service
+**AI Tool:** Kiro
+
+**Design decisions:**
+
+1. `retrieval.service.js` exports a `retrieve(question, topK)` function — not a script.
+   This is intentional: Phase 8 (LLM) and Phase 13 (evaluation) both need to call it as a module.
+
+2. Query embedding uses `taskType: RETRIEVAL_QUERY`, not `RETRIEVAL_DOCUMENT`.
+   The Gemini model was trained so these two task types produce embeddings that match well across cosine similarity. Using the wrong task type for queries would reduce retrieval quality.
+
+3. `numCandidates = topK × 10`. MongoDB's ANN search examines this many candidates before selecting topK. More candidates = more accurate results but slightly slower. 10× is the standard recommendation.
+
+4. The raw 3072-element `embedding` array is excluded from the returned documents via `$project`. The caller never needs it — it would just waste memory and network bandwidth.
+
+5. `embedQuery()` is exported separately so the LLM layer (Phase 8) can embed queries without importing the whole script.
+
+**Verified test results (6 questions):**
+- "What is an aggregation pipeline?" → top results: Aggregation, Aggregation Pipeline (scores 0.88–0.89) ✅
+- "How do compound indexes work?" → top results: Compound Indexes (scores 0.87–0.88) ✅
+- "MongoDB transactions ACID?" → top results: Transactions (score 0.90) ✅
+- "How does replication work?" → top results: Replication (scores 0.88–0.89) ✅
+- "Embedding vs referencing documents?" → top results: Embedded Data Models, Data Modeling Best Practices ✅
+- "President of France?" → scores ~0.76, irrelevant results — confirms out-of-scope detection will work ✅
+
+**Score interpretation:**
+- On-topic: 0.86–0.90 (high cosine similarity)
+- Out-of-scope: ~0.76 (noticeably lower — the LLM layer will use this gap to trigger "insufficient information" responses)
+
+**Problems encountered:** None. The `$vectorSearch` stage worked on the first attempt with the confirmed index name and field.
+
+---
+
 <!-- New entries will be added as each phase is completed -->
