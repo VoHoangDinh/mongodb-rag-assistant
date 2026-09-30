@@ -11,5 +11,9 @@
     "experiment": "node scripts/experiment.js",
     "backend": "node backend/src/app.js",
     "frontend": "npm run dev --prefix frontend"
+  },
+  "dependencies": {
+    "@google/genai": "2.24.0",
+    "dotenv": "18.0.4"
   }
 }

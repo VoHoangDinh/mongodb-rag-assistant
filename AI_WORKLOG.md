@@ -165,4 +165,50 @@ Always measure the actual data distribution before choosing a chunking strategy.
 
 ---
 
+---
+
+## Phase 5 — Embedding
+
+**Date:** 2026-09-30
+**Task:** Embed all 300 chunks using Gemini Embedding API
+**AI Tool:** Kiro
+
+**Why Gemini Embedding:**
+- User already has a Gemini API key
+- `gemini-embedding-001` is Google's production embedding model optimized for retrieval
+- No additional cost for a different provider
+- Official `@google/genai` JS SDK available
+
+**Model details:**
+- Model: `gemini-embedding-001`
+- Default dimension: 3072
+- Task type used: `RETRIEVAL_DOCUMENT` (for indexed documents — pairs with `RETRIEVAL_QUERY` for search)
+- Supports batch input: multiple strings in one `embedContent` call
+
+**Batch strategy:**
+- `EMBEDDING_BATCH_SIZE=50` (read from env) chunks per API call
+- 300 chunks = 6 batches of 50
+- 500ms delay between batches to avoid rate limits
+- Automatic 60s retry on HTTP 429 (rate limit) errors
+
+**Input/output:**
+- Input: `data/processed/chunks-800.json` (300 chunks)
+- Output: `data/processed/embeddings.json`
+- Each record = all original chunk metadata + `embedding: [3072 floats]`
+
+**Validation performed:**
+- Input count = output count
+- All embeddings have same dimension (3072)
+- Zero duplicate chunkIds
+- Zero empty embedding vectors
+
+**Problems encountered:**
+- `GEMINI_API_KEY` was not in `.env` initially — the service exits with a clear error message pointing to aistudio.google.com
+- `EMBEDDING_MODEL` was set to `text-embedding-3-small` (OpenAI) — updated to `gemini-embedding-001`
+
+**Lesson:**
+The `@google/genai` JS SDK accepts an array of strings directly in `contents` — you don't need to wrap each string in a `{ parts: [{text}] }` object like the REST API. Reading the official docs example before writing code prevented an incorrect implementation.
+
+---
+
 <!-- New entries will be added as each phase is completed -->

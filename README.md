@@ -12,7 +12,7 @@ A RAG-based (Retrieval-Augmented Generation) knowledge assistant built on MongoD
 | 2 | Dataset acquisition | ✅ Done |
 | 3 | Document parsing | ✅ Done |
 | 4 | Chunking | ✅ Done |
-| 5 | Embedding | ⬜ |
+| 5 | Embedding | ✅ Done |
 | 6 | MongoDB Vector Search | ⬜ |
 | 7 | Retrieval | ⬜ |
 | 8 | LLM generation | ⬜ |
@@ -89,3 +89,25 @@ node scripts/chunk-docs.js --chunk-size 300 --overlap 50 --output data/processed
 # Experiment B
 node scripts/chunk-docs.js --chunk-size 800 --overlap 100 --output data/processed/chunks-800.json
 ```
+
+## Embedding
+
+Each chunk is embedded using the Gemini Embedding API and stored in `data/processed/embeddings.json`.
+
+- Embedding model: `gemini-embedding-001`
+- Task type: `RETRIEVAL_DOCUMENT` (optimized for RAG document indexing)
+- Embedding dimension: 3072 (default for gemini-embedding-001)
+- Batch size: 50 chunks per API call
+- Input: `data/processed/chunks-800.json` (300 chunks)
+- Output: `data/processed/embeddings.json`
+
+Run:
+```bash
+# Test with 3 chunks first
+node backend/src/services/embedding.service.js --limit 3
+
+# Embed all 300 chunks
+node backend/src/services/embedding.service.js
+```
+
+Requires `GEMINI_API_KEY` in `.env`. Get your key at https://aistudio.google.com/app/apikey
