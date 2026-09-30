@@ -188,7 +188,20 @@ Preliminary metrics on partial runs should not be used to draw final conclusions
 Mixing results from different chunk configurations would make the comparison meaningless.
 Each experiment stores its own `results.json` and `metrics.json` so they can be compared cleanly.
 
-## Why the Same Questions Must Be Used
+## Failure Analysis
+
+`evaluation/experiments/failure-analysis.md` documents all retrieval failures and near-misses.
+
+Key findings:
+- chunk-300: 1 total miss (Q005), 4 Hit@1 misses resolved at Hit@3/5
+- chunk-800: 0 total misses, 1 Hit@1 near-miss with 0.0015 score margin (Q001)
+- Primary failure pattern: parent document outranking specific child document with small chunks
+- Q005 root cause: $match-heavy optimization chunks outscored the aggregation intro at 300 chars
 
 Using different questions for each experiment would confuse difficulty effects with chunk-size effects.
 All 40 questions from `evaluation/questions.json` must be run for both configurations.
+
+## Why the Same Questions Must Be Used
+
+Using different questions for each experiment would confuse difficulty effects with chunk-size effects.
+All questions from `evaluation/questions.json` must be run for both configurations.

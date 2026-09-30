@@ -509,4 +509,28 @@ Verification script confirmed 13/13 metric values in the report match the JSON f
 
 ---
 
+---
+
+## Phase 10E — Failure Analysis
+
+**Date:** 2026-09-30
+**Task:** Create `failure-analysis.md` documenting retrieval failures and near-misses
+**AI Tool:** Kiro
+
+**Method:** All findings based on actual JSON result files. No Gemini generation API called.
+18/18 quoted metrics verified by validation script against result files.
+
+**Key findings:**
+- 6 questions showed some form of retrieval difference between configurations
+- Q005 is the only true retrieval failure (expected source absent from top-5 in chunk-300)
+- Q001 shows a reversal: chunk-300 hits Hit@1, chunk-800 does not — but the margin is 0.0015 (near-tie)
+- Q013, Q020, Q027, Q033: parent document outranked child document in chunk-300 (margins 0.0065–0.0137)
+- No semantic ambiguity or terminology mismatch failures detected
+
+**Failure categories identified:**
+1. Chunk-size/context effect: 1 case (Q005) — small chunks from related doc dominated
+2. Related-document / marginal score: 5 cases — broader parent doc outranked specific child doc
+
+---
+
 <!-- New entries will be added as each phase is completed -->
