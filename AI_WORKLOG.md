@@ -385,4 +385,98 @@ Keyword overlap is a conservative proxy. Q005 was marked `partially_correct` (47
 
 ---
 
+---
+
+## Phase 10D-1 — Chunking Experiment Preparation
+
+**Date:** 2026-09-30
+**Task:** Prepare the structure and validation for the chunk-300 vs chunk-800 experiment
+**AI Tool:** Kiro
+
+**What was confirmed by inspection:**
+- `chunks-300.json`: 860 chunks, 860 unique IDs, zero empty text, chunkSize=300, overlap=50 ✅
+- `chunks-800.json`: 300 chunks, 300 unique IDs, chunkSize=800, overlap=100 ✅
+- `embeddings.json`: 300 embeddings, dim=3072 — **100% matches chunks-800.json IDs** ✅
+- `embeddings-300.json`: does not yet exist — needs to be generated
+
+**Design decisions:**
+1. Use the same MongoDB collection for both experiments sequentially — no second vector index needed
+2. `prepare-experiment.js` reuses `embedding.service.js` via child process spawn — zero duplicated embedding logic
+3. `--validate-only` flag lets you verify configuration without spending API quota
+4. Resume detection: if embeddings file already exists and count matches expected, skip re-embedding
+5. chunk-800 is already "done" — no API call needed (embeddings.json confirmed complete)
+6. chunk-300 embeddings must still be generated (860 chunks × Gemini embedding API)
+
+**Validation results:**
+- chunk-800 `--validate-only`: ✅ COMPLETE
+- chunk-300 `--validate-only`: ✅ chunks valid, embeddings need generation
+
+**Next step for chunk-300:**
+```bash
+node evaluation/experiments/prepare-experiment.js --experiment chunk-300
+```
+This will call `embedding.service.js --input chunks-300.json --output embeddings-300.json`.
+860 chunks = 18 batches of 50 at EMBEDDING_BATCH_SIZE=50.
+Expected cost: ~18 Gemini embedding API calls.
+
+**Problems encountered:** None. Validation-only runs confirmed both configurations without using any quota.
+
+---
+
+---
+
+## Phase 10D-3 — Import chunk-300 Experiment into MongoDB
+
+**Date:** 2026-09-30
+**Task:** Create `import-experiment.js` and load chunk-300 embeddings into MongoDB
+**AI Tool:** Kiro
+
+**Design:**
+- Reuses `getDb()` / `closeConnection()` from `backend/src/config/mongodb.js` — no credential duplication
+- `deleteMany({})` clears the collection before importing — prevents mixed-experiment results
+- `bulkWrite` with `replaceOne + upsert:true` — same pattern as `import-embeddings.service.js`
+- Post-import validation queries MongoDB directly: `countDocuments`, duplicate aggregation, missing-embedding count
+- Safety: rejects unknown experiment IDs; prints experiment config before delete; never touches any collection other than `MONGODB_COLLECTION`
+- Vector index (`vector_index`) is never dropped — Atlas auto-updates it
+
+**Actual run result:**
+```
+Experiment    : chunk-300
+Deleted       : 300  (old chunk-800 documents removed)
+Inserted      : 860
+MongoDB docs  : 860
+Dim           : 3072
+Duplicates    : 0
+Missing emb   : 0
+Validation    : ✅ PASS
+```
+
+**Problems encountered:** None.
+
+---
+
+---
+
+## Phase 10D-4 — Retrieval-Only Evaluation (chunk-300)
+
+**Date:** 2026-09-30
+**Task:** Run all 36 in-scope questions through the retrieval service against the chunk-300 collection
+**AI Tool:** Kiro
+
+**Results:**
+- Hit@1: 86.1% (31/36)
+- Hit@3: 97.2% (35/36)
+- Hit@5: 97.2% (35/36)
+- Latency avg: 566ms | P50: 519ms | P95: 583ms
+
+**Only 1 miss at Hit@5:**
+- Q005 ("What does the $match stage do?"): expected `aggregation`, got `aggregation-pipeline-optimization` as top result. The $match question triggered optimization content because $match and optimization are closely related in the documentation.
+
+**5 questions hit at H3 or H5 but not H1:**
+- Q013 (query-api), Q020 (document), Q027 (replica-set-members), Q033 (sharded-cluster-components) — expected source was in top-3 or top-5 but not #1.
+
+**Note:** No LLM generation was called. Only query embeddings were generated (Gemini embedding API).
+
+---
+
 <!-- New entries will be added as each phase is completed -->

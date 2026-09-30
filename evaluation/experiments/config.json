@@ -1,0 +1,30 @@
+{
+  "description": "Chunking experiment comparing 300-char vs 800-char chunk configurations on the same dataset, evaluation questions, retrieval parameters, and LLM model.",
+  "experiments": [
+    {
+      "id": "chunk-300",
+      "label": "Small chunks (300 chars, 50 overlap)",
+      "chunkSize": 300,
+      "overlap": 50,
+      "chunksFile": "data/processed/chunks-300.json",
+      "embeddingsFile": "data/processed/embeddings-300.json",
+      "resultsDir": "evaluation/experiments/results/chunk-300"
+    },
+    {
+      "id": "chunk-800",
+      "label": "Large chunks (800 chars, 100 overlap)",
+      "chunkSize": 800,
+      "overlap": 100,
+      "chunksFile": "data/processed/chunks-800.json",
+      "embeddingsFile": "data/processed/embeddings.json",
+      "resultsDir": "evaluation/experiments/results/chunk-800"
+    }
+  ],
+  "sharedConfig": {
+    "embeddingModel": "gemini-embedding-001",
+    "generationModel": "gemini-flash-latest",
+    "topK": 5,
+    "evaluationQuestions": "evaluation/questions.json",
+    "note": "All experiments must use the same questions, topK, embedding model, and generation model. Only chunk configuration changes."
+  }
+}

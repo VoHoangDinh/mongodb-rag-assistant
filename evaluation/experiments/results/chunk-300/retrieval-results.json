@@ -1,0 +1,1714 @@
+{
+  "experiment": "chunk-300",
+  "metrics": {
+    "total": 36,
+    "success": 36,
+    "hit1": 0.86,
+    "hit1_raw": 31,
+    "hit3": 0.97,
+    "hit3_raw": 35,
+    "hit5": 0.97,
+    "hit5_raw": 35,
+    "latency": {
+      "avg": 565.5,
+      "p50": 518.5,
+      "p95": 583,
+      "min": 468,
+      "max": 2010
+    }
+  },
+  "results": [
+    {
+      "id": "Q001",
+      "category": "aggregation",
+      "question": "What is an aggregation pipeline in MongoDB?",
+      "expectedSource": "aggregation-pipeline",
+      "retrievedSources": [
+        {
+          "chunkId": "aggregation-pipeline-0002",
+          "documentId": "aggregation-pipeline",
+          "title": "Aggregation Pipeline",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline/",
+          "score": 0.8779441118240356
+        },
+        {
+          "chunkId": "aggregation-pipeline-0004",
+          "documentId": "aggregation-pipeline",
+          "title": "Aggregation Pipeline",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline/",
+          "score": 0.8745466470718384
+        },
+        {
+          "chunkId": "aggregation-0002",
+          "documentId": "aggregation",
+          "title": "Aggregation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/aggregation/",
+          "score": 0.8717684745788574
+        },
+        {
+          "chunkId": "aggregation-pipeline-0001",
+          "documentId": "aggregation-pipeline",
+          "title": "Aggregation Pipeline",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline/",
+          "score": 0.8712443113327026
+        },
+        {
+          "chunkId": "aggregation-0006",
+          "documentId": "aggregation",
+          "title": "Aggregation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/aggregation/",
+          "score": 0.8710779547691345
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 2010
+    },
+    {
+      "id": "Q002",
+      "category": "aggregation",
+      "question": "How do you run an aggregation pipeline in MongoDB?",
+      "expectedSource": "aggregation-pipeline",
+      "retrievedSources": [
+        {
+          "chunkId": "aggregation-pipeline-0001",
+          "documentId": "aggregation-pipeline",
+          "title": "Aggregation Pipeline",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline/",
+          "score": 0.8966513872146606
+        },
+        {
+          "chunkId": "aggregation-pipeline-0002",
+          "documentId": "aggregation-pipeline",
+          "title": "Aggregation Pipeline",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline/",
+          "score": 0.8785166144371033
+        },
+        {
+          "chunkId": "geospatial-queries-0021",
+          "documentId": "geospatial-queries",
+          "title": "Geospatial Queries",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/geospatial-queries/",
+          "score": 0.8727120757102966
+        },
+        {
+          "chunkId": "aggregation-0002",
+          "documentId": "aggregation",
+          "title": "Aggregation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/aggregation/",
+          "score": 0.8714972734451294
+        },
+        {
+          "chunkId": "geospatial-queries-0020",
+          "documentId": "geospatial-queries",
+          "title": "Geospatial Queries",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/geospatial-queries/",
+          "score": 0.8703204393386841
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 518
+    },
+    {
+      "id": "Q003",
+      "category": "aggregation",
+      "question": "What are aggregation operations used for in MongoDB?",
+      "expectedSource": "aggregation",
+      "retrievedSources": [
+        {
+          "chunkId": "aggregation-0001",
+          "documentId": "aggregation",
+          "title": "Aggregation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/aggregation/",
+          "score": 0.894013524055481
+        },
+        {
+          "chunkId": "aggregation-0000",
+          "documentId": "aggregation",
+          "title": "Aggregation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/aggregation/",
+          "score": 0.8935027122497559
+        },
+        {
+          "chunkId": "query-api-0002",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8798054456710815
+        },
+        {
+          "chunkId": "aggregation-0002",
+          "documentId": "aggregation",
+          "title": "Aggregation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/aggregation/",
+          "score": 0.8718382120132446
+        },
+        {
+          "chunkId": "query-api-0000",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8694638013839722
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 509
+    },
+    {
+      "id": "Q004",
+      "category": "aggregation",
+      "question": "What aggregation pipeline optimization does MongoDB apply to $project followed by $match?",
+      "expectedSource": "aggregation-pipeline-optimization",
+      "retrievedSources": [
+        {
+          "chunkId": "aggregation-pipeline-optimization-0004",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.910877525806427
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0003",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.9029829502105713
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0013",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.8984293937683105
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0002",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.8967957496643066
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0012",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.8965860605239868
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 533
+    },
+    {
+      "id": "Q005",
+      "category": "aggregation",
+      "question": "What does the $match stage do in an aggregation pipeline?",
+      "expectedSource": "aggregation",
+      "retrievedSources": [
+        {
+          "chunkId": "aggregation-pipeline-optimization-0059",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.8873168230056763
+        },
+        {
+          "chunkId": "change-streams-0047",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8772417902946472
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0004",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.876833438873291
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0007",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.8757380247116089
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0058",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.8722409009933472
+        }
+      ],
+      "hit1": false,
+      "hit3": false,
+      "hit5": false,
+      "latencyMs": 522
+    },
+    {
+      "id": "Q006",
+      "category": "indexes",
+      "question": "What is the purpose of indexes in MongoDB?",
+      "expectedSource": "indexes",
+      "retrievedSources": [
+        {
+          "chunkId": "indexes-0000",
+          "documentId": "indexes",
+          "title": "Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/indexes/",
+          "score": 0.8861931562423706
+        },
+        {
+          "chunkId": "data-modeling-best-practices-0022",
+          "documentId": "data-modeling-best-practices",
+          "title": "Data Modeling Best Practices",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/best-practices/",
+          "score": 0.8843224048614502
+        },
+        {
+          "chunkId": "indexes-0010",
+          "documentId": "indexes",
+          "title": "Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/indexes/",
+          "score": 0.8809723854064941
+        },
+        {
+          "chunkId": "query-optimization-0002",
+          "documentId": "query-optimization",
+          "title": "Query Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/query-optimization/",
+          "score": 0.8766125440597534
+        },
+        {
+          "chunkId": "query-optimization-0027",
+          "documentId": "query-optimization",
+          "title": "Query Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/query-optimization/",
+          "score": 0.8724160194396973
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 518
+    },
+    {
+      "id": "Q007",
+      "category": "indexes",
+      "question": "How does a compound index work in MongoDB, and what is an index prefix?",
+      "expectedSource": "index-compound",
+      "retrievedSources": [
+        {
+          "chunkId": "index-compound-0006",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.9065576791763306
+        },
+        {
+          "chunkId": "index-compound-0012",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.8933746814727783
+        },
+        {
+          "chunkId": "index-compound-0005",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.886879563331604
+        },
+        {
+          "chunkId": "index-compound-0013",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.8858541250228882
+        },
+        {
+          "chunkId": "index-compound-0007",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.8848450779914856
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 484
+    },
+    {
+      "id": "Q008",
+      "category": "indexes",
+      "question": "What is the maximum number of fields a compound index can contain?",
+      "expectedSource": "index-compound",
+      "retrievedSources": [
+        {
+          "chunkId": "index-compound-0002",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.8962148427963257
+        },
+        {
+          "chunkId": "index-multikey-0010",
+          "documentId": "index-multikey",
+          "title": "Multikey Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-multikey/",
+          "score": 0.8805020451545715
+        },
+        {
+          "chunkId": "index-compound-0005",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.8771499395370483
+        },
+        {
+          "chunkId": "index-compound-0000",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.8745901584625244
+        },
+        {
+          "chunkId": "index-compound-0006",
+          "documentId": "index-compound",
+          "title": "Compound Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-compound/",
+          "score": 0.873024046421051
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 541
+    },
+    {
+      "id": "Q009",
+      "category": "indexes",
+      "question": "What is a multikey index and when does MongoDB create one?",
+      "expectedSource": "index-multikey",
+      "retrievedSources": [
+        {
+          "chunkId": "index-multikey-0001",
+          "documentId": "index-multikey",
+          "title": "Multikey Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-multikey/",
+          "score": 0.8998239040374756
+        },
+        {
+          "chunkId": "index-multikey-0002",
+          "documentId": "index-multikey",
+          "title": "Multikey Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-multikey/",
+          "score": 0.8912643194198608
+        },
+        {
+          "chunkId": "index-multikey-0003",
+          "documentId": "index-multikey",
+          "title": "Multikey Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-multikey/",
+          "score": 0.8885999917984009
+        },
+        {
+          "chunkId": "index-multikey-0016",
+          "documentId": "index-multikey",
+          "title": "Multikey Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-multikey/",
+          "score": 0.8866497874259949
+        },
+        {
+          "chunkId": "index-multikey-0011",
+          "documentId": "index-multikey",
+          "title": "Multikey Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-multikey/",
+          "score": 0.8830382227897644
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 476
+    },
+    {
+      "id": "Q010",
+      "category": "indexes",
+      "question": "What is a text index in MongoDB and what is the limit per collection?",
+      "expectedSource": "index-text",
+      "retrievedSources": [
+        {
+          "chunkId": "index-text-0008",
+          "documentId": "index-text",
+          "title": "Text Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-text/",
+          "score": 0.8814764022827148
+        },
+        {
+          "chunkId": "index-text-0004",
+          "documentId": "index-text",
+          "title": "Text Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-text/",
+          "score": 0.8751932382583618
+        },
+        {
+          "chunkId": "index-text-0009",
+          "documentId": "index-text",
+          "title": "Text Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-text/",
+          "score": 0.8713057637214661
+        },
+        {
+          "chunkId": "index-text-0002",
+          "documentId": "index-text",
+          "title": "Text Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-text/",
+          "score": 0.8672956228256226
+        },
+        {
+          "chunkId": "index-text-0001",
+          "documentId": "index-text",
+          "title": "Text Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-text/",
+          "score": 0.866614580154419
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 506
+    },
+    {
+      "id": "Q011",
+      "category": "queries",
+      "question": "What CRUD operations does MongoDB support?",
+      "expectedSource": "crud",
+      "retrievedSources": [
+        {
+          "chunkId": "crud-0000",
+          "documentId": "crud",
+          "title": "MongoDB CRUD Operations",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/crud/",
+          "score": 0.9035190343856812
+        },
+        {
+          "chunkId": "query-api-0000",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8918319940567017
+        },
+        {
+          "chunkId": "introduction-0005",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8882688283920288
+        },
+        {
+          "chunkId": "crud-core-0000",
+          "documentId": "crud-core",
+          "title": "CRUD Concepts",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/crud/",
+          "score": 0.8809694051742554
+        },
+        {
+          "chunkId": "crud-0007",
+          "documentId": "crud",
+          "title": "MongoDB CRUD Operations",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/crud/",
+          "score": 0.8797316551208496
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 505
+    },
+    {
+      "id": "Q012",
+      "category": "queries",
+      "question": "What is query optimization in MongoDB?",
+      "expectedSource": "query-optimization",
+      "retrievedSources": [
+        {
+          "chunkId": "query-optimization-0000",
+          "documentId": "query-optimization",
+          "title": "Query Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/query-optimization/",
+          "score": 0.8819361925125122
+        },
+        {
+          "chunkId": "aggregation-pipeline-optimization-0000",
+          "documentId": "aggregation-pipeline-optimization",
+          "title": "Aggregation Pipeline Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/aggregation-pipeline-optimization/",
+          "score": 0.877414345741272
+        },
+        {
+          "chunkId": "query-api-0004",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8761237859725952
+        },
+        {
+          "chunkId": "data-modeling-best-practices-0022",
+          "documentId": "data-modeling-best-practices",
+          "title": "Data Modeling Best Practices",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/best-practices/",
+          "score": 0.8759925365447998
+        },
+        {
+          "chunkId": "query-optimization-0027",
+          "documentId": "query-optimization",
+          "title": "Query Optimization",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/query-optimization/",
+          "score": 0.8745936155319214
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 560
+    },
+    {
+      "id": "Q013",
+      "category": "queries",
+      "question": "What is the MongoDB Query API?",
+      "expectedSource": "query-api",
+      "retrievedSources": [
+        {
+          "chunkId": "introduction-0005",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8847111463546753
+        },
+        {
+          "chunkId": "query-api-0000",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8772569894790649
+        },
+        {
+          "chunkId": "introduction-0011",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8743079900741577
+        },
+        {
+          "chunkId": "crud-0003",
+          "documentId": "crud",
+          "title": "MongoDB CRUD Operations",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/crud/",
+          "score": 0.871639609336853
+        },
+        {
+          "chunkId": "crud-0004",
+          "documentId": "crud",
+          "title": "MongoDB CRUD Operations",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/crud/",
+          "score": 0.8669301271438599
+        }
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 505
+    },
+    {
+      "id": "Q014",
+      "category": "queries",
+      "question": "What is a geospatial query in MongoDB?",
+      "expectedSource": "geospatial-queries",
+      "retrievedSources": [
+        {
+          "chunkId": "geospatial-queries-0000",
+          "documentId": "geospatial-queries",
+          "title": "Geospatial Queries",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/geospatial-queries/",
+          "score": 0.8915338516235352
+        },
+        {
+          "chunkId": "geospatial-queries-0003",
+          "documentId": "geospatial-queries",
+          "title": "Geospatial Queries",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/geospatial-queries/",
+          "score": 0.8794701099395752
+        },
+        {
+          "chunkId": "geospatial-queries-0016",
+          "documentId": "geospatial-queries",
+          "title": "Geospatial Queries",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/geospatial-queries/",
+          "score": 0.8791312575340271
+        },
+        {
+          "chunkId": "geospatial-queries-0007",
+          "documentId": "geospatial-queries",
+          "title": "Geospatial Queries",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/geospatial-queries/",
+          "score": 0.8727717399597168
+        },
+        {
+          "chunkId": "geospatial-queries-0019",
+          "documentId": "geospatial-queries",
+          "title": "Geospatial Queries",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/geospatial-queries/",
+          "score": 0.8709282875061035
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 512
+    },
+    {
+      "id": "Q015",
+      "category": "queries",
+      "question": "How does text search work in MongoDB?",
+      "expectedSource": "text-search",
+      "retrievedSources": [
+        {
+          "chunkId": "text-search-0000",
+          "documentId": "text-search",
+          "title": "Text Search",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/text-search/",
+          "score": 0.8866205215454102
+        },
+        {
+          "chunkId": "index-text-0002",
+          "documentId": "index-text",
+          "title": "Text Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-text/",
+          "score": 0.8847126960754395
+        },
+        {
+          "chunkId": "text-search-0001",
+          "documentId": "text-search",
+          "title": "Text Search",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/text-search/",
+          "score": 0.8816049098968506
+        },
+        {
+          "chunkId": "text-index-0008",
+          "documentId": "text-index",
+          "title": "Text Indexes (On-Prem)",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/text-search/",
+          "score": 0.877626895904541
+        },
+        {
+          "chunkId": "index-text-0008",
+          "documentId": "index-text",
+          "title": "Text Indexes",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/indexes/index-types/index-text/",
+          "score": 0.869884729385376
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 562
+    },
+    {
+      "id": "Q016",
+      "category": "data-modeling",
+      "question": "What is the core principle of data modeling in MongoDB?",
+      "expectedSource": "data-modeling",
+      "retrievedSources": [
+        {
+          "chunkId": "data-modeling-0001",
+          "documentId": "data-modeling",
+          "title": "Data Modeling Introduction",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/",
+          "score": 0.9037640690803528
+        },
+        {
+          "chunkId": "data-modeling-0000",
+          "documentId": "data-modeling",
+          "title": "Data Modeling Introduction",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/",
+          "score": 0.8940660953521729
+        },
+        {
+          "chunkId": "data-modeling-best-practices-0000",
+          "documentId": "data-modeling-best-practices",
+          "title": "Data Modeling Best Practices",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/best-practices/",
+          "score": 0.8938381671905518
+        },
+        {
+          "chunkId": "data-modeling-0007",
+          "documentId": "data-modeling",
+          "title": "Data Modeling Introduction",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/",
+          "score": 0.8851886987686157
+        },
+        {
+          "chunkId": "query-api-0006",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8834362030029297
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 551
+    },
+    {
+      "id": "Q017",
+      "category": "data-modeling",
+      "question": "What are the benefits of embedding documents in MongoDB?",
+      "expectedSource": "data-modeling-embedding",
+      "retrievedSources": [
+        {
+          "chunkId": "data-modeling-embedding-0002",
+          "documentId": "data-modeling-embedding",
+          "title": "Embedded Data Models",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/embedding/",
+          "score": 0.8997867107391357
+        },
+        {
+          "chunkId": "data-modeling-embedding-0003",
+          "documentId": "data-modeling-embedding",
+          "title": "Embedded Data Models",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/embedding/",
+          "score": 0.8994892835617065
+        },
+        {
+          "chunkId": "data-modeling-embedding-0004",
+          "documentId": "data-modeling-embedding",
+          "title": "Embedded Data Models",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/embedding/",
+          "score": 0.8971909284591675
+        },
+        {
+          "chunkId": "data-modeling-embedding-0000",
+          "documentId": "data-modeling-embedding",
+          "title": "Embedded Data Models",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/embedding/",
+          "score": 0.8956458568572998
+        },
+        {
+          "chunkId": "data-modeling-embedding-0001",
+          "documentId": "data-modeling-embedding",
+          "title": "Embedded Data Models",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/embedding/",
+          "score": 0.8952900171279907
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 549
+    },
+    {
+      "id": "Q018",
+      "category": "data-modeling",
+      "question": "When should you use references instead of embedding in MongoDB?",
+      "expectedSource": "data-modeling-referencing",
+      "retrievedSources": [
+        {
+          "chunkId": "data-modeling-referencing-0002",
+          "documentId": "data-modeling-referencing",
+          "title": "References / Normalized Data Models",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/referencing/",
+          "score": 0.9060776233673096
+        },
+        {
+          "chunkId": "data-modeling-best-practices-0008",
+          "documentId": "data-modeling-best-practices",
+          "title": "Data Modeling Best Practices",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/best-practices/",
+          "score": 0.8986122608184814
+        },
+        {
+          "chunkId": "data-modeling-0013",
+          "documentId": "data-modeling",
+          "title": "Data Modeling Introduction",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/",
+          "score": 0.8918519020080566
+        },
+        {
+          "chunkId": "data-modeling-embedding-0004",
+          "documentId": "data-modeling-embedding",
+          "title": "Embedded Data Models",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/embedding/",
+          "score": 0.8775978684425354
+        },
+        {
+          "chunkId": "data-modeling-best-practices-0007",
+          "documentId": "data-modeling-best-practices",
+          "title": "Data Modeling Best Practices",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/best-practices/",
+          "score": 0.8755341172218323
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 501
+    },
+    {
+      "id": "Q019",
+      "category": "data-modeling",
+      "question": "What is schema validation in MongoDB?",
+      "expectedSource": "schema-validation",
+      "retrievedSources": [
+        {
+          "chunkId": "schema-validation-0000",
+          "documentId": "schema-validation",
+          "title": "Schema Validation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/schema-validation/",
+          "score": 0.9024495482444763
+        },
+        {
+          "chunkId": "schema-validation-0001",
+          "documentId": "schema-validation",
+          "title": "Schema Validation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/schema-validation/",
+          "score": 0.8965537548065186
+        },
+        {
+          "chunkId": "schema-validation-0003",
+          "documentId": "schema-validation",
+          "title": "Schema Validation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/schema-validation/",
+          "score": 0.8842517137527466
+        },
+        {
+          "chunkId": "schema-validation-0006",
+          "documentId": "schema-validation",
+          "title": "Schema Validation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/schema-validation/",
+          "score": 0.8834214210510254
+        },
+        {
+          "chunkId": "schema-validation-0004",
+          "documentId": "schema-validation",
+          "title": "Schema Validation",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/schema-validation/",
+          "score": 0.8792377710342407
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 541
+    },
+    {
+      "id": "Q020",
+      "category": "data-modeling",
+      "question": "What is a MongoDB document and what format does it use?",
+      "expectedSource": "document",
+      "retrievedSources": [
+        {
+          "chunkId": "introduction-0001",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8990002274513245
+        },
+        {
+          "chunkId": "document-0002",
+          "documentId": "document",
+          "title": "Documents",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/document/",
+          "score": 0.885949969291687
+        },
+        {
+          "chunkId": "document-0000",
+          "documentId": "document",
+          "title": "Documents",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/document/",
+          "score": 0.8838351964950562
+        },
+        {
+          "chunkId": "query-api-0006",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8824156522750854
+        },
+        {
+          "chunkId": "document-0001",
+          "documentId": "document",
+          "title": "Documents",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/document/",
+          "score": 0.8813831806182861
+        }
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 509
+    },
+    {
+      "id": "Q021",
+      "category": "transactions",
+      "question": "Does MongoDB support ACID transactions?",
+      "expectedSource": "transactions",
+      "retrievedSources": [
+        {
+          "chunkId": "transactions-0002",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.9101762771606445
+        },
+        {
+          "chunkId": "transactions-0000",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.885658323764801
+        },
+        {
+          "chunkId": "transactions-0001",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8814355731010437
+        },
+        {
+          "chunkId": "transactions-0035",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8682107329368591
+        },
+        {
+          "chunkId": "transactions-0029",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8607571125030518
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 468
+    },
+    {
+      "id": "Q022",
+      "category": "transactions",
+      "question": "What is the difference between the Callback API and Core API for MongoDB transactions?",
+      "expectedSource": "transactions-in-applications",
+      "retrievedSources": [
+        {
+          "chunkId": "transactions-in-applications-0000",
+          "documentId": "transactions-in-applications",
+          "title": "Transactions in Applications",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions-in-applications/",
+          "score": 0.8915280103683472
+        },
+        {
+          "chunkId": "transactions-in-applications-0001",
+          "documentId": "transactions-in-applications",
+          "title": "Transactions in Applications",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions-in-applications/",
+          "score": 0.8853820562362671
+        },
+        {
+          "chunkId": "transactions-in-applications-0002",
+          "documentId": "transactions-in-applications",
+          "title": "Transactions in Applications",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions-in-applications/",
+          "score": 0.8816855549812317
+        },
+        {
+          "chunkId": "transactions-in-applications-0024",
+          "documentId": "transactions-in-applications",
+          "title": "Transactions in Applications",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions-in-applications/",
+          "score": 0.8674138784408569
+        },
+        {
+          "chunkId": "transactions-in-applications-0005",
+          "documentId": "transactions-in-applications",
+          "title": "Transactions in Applications",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions-in-applications/",
+          "score": 0.8674138784408569
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 545
+    },
+    {
+      "id": "Q023",
+      "category": "transactions",
+      "question": "Are multi-document transactions always necessary in MongoDB?",
+      "expectedSource": "transactions",
+      "retrievedSources": [
+        {
+          "chunkId": "transactions-0001",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.9026859998703003
+        },
+        {
+          "chunkId": "transactions-0002",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8884787559509277
+        },
+        {
+          "chunkId": "transactions-0000",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8877642154693604
+        },
+        {
+          "chunkId": "data-modeling-best-practices-0028",
+          "documentId": "data-modeling-best-practices",
+          "title": "Data Modeling Best Practices",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/data-modeling/best-practices/",
+          "score": 0.880829930305481
+        },
+        {
+          "chunkId": "transactions-0014",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8736268281936646
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 515
+    },
+    {
+      "id": "Q024",
+      "category": "transactions",
+      "question": "Can MongoDB transactions span multiple shards?",
+      "expectedSource": "transactions",
+      "retrievedSources": [
+        {
+          "chunkId": "transactions-0002",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.9000133275985718
+        },
+        {
+          "chunkId": "transactions-0035",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8950235843658447
+        },
+        {
+          "chunkId": "transactions-0001",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8883588910102844
+        },
+        {
+          "chunkId": "transactions-0044",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.885664701461792
+        },
+        {
+          "chunkId": "transactions-0014",
+          "documentId": "transactions",
+          "title": "Transactions",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/transactions/",
+          "score": 0.8823761940002441
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 518
+    },
+    {
+      "id": "Q025",
+      "category": "replication",
+      "question": "What is a replica set in MongoDB?",
+      "expectedSource": "replication",
+      "retrievedSources": [
+        {
+          "chunkId": "replication-0000",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8874902725219727
+        },
+        {
+          "chunkId": "replica-set-members-0000",
+          "documentId": "replica-set-members",
+          "title": "Replica Set Members",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/replica-set-members/",
+          "score": 0.8828855752944946
+        },
+        {
+          "chunkId": "replication-0004",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8821614980697632
+        },
+        {
+          "chunkId": "introduction-0006",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8802807331085205
+        },
+        {
+          "chunkId": "replication-0001",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.878389835357666
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 532
+    },
+    {
+      "id": "Q026",
+      "category": "replication",
+      "question": "What is the minimum recommended configuration for a MongoDB replica set?",
+      "expectedSource": "replica-set-members",
+      "retrievedSources": [
+        {
+          "chunkId": "replica-set-members-0002",
+          "documentId": "replica-set-members",
+          "title": "Replica Set Members",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/replica-set-members/",
+          "score": 0.9037569761276245
+        },
+        {
+          "chunkId": "sharded-cluster-components-0001",
+          "documentId": "sharded-cluster-components",
+          "title": "Sharded Cluster Components",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/sharded-cluster-components/",
+          "score": 0.8813971281051636
+        },
+        {
+          "chunkId": "replica-set-members-0003",
+          "documentId": "replica-set-members",
+          "title": "Replica Set Members",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/replica-set-members/",
+          "score": 0.8779473304748535
+        },
+        {
+          "chunkId": "sharded-cluster-components-0002",
+          "documentId": "sharded-cluster-components",
+          "title": "Sharded Cluster Components",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/sharded-cluster-components/",
+          "score": 0.8742551803588867
+        },
+        {
+          "chunkId": "replication-0000",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8699017763137817
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 491
+    },
+    {
+      "id": "Q027",
+      "category": "replication",
+      "question": "What is the role of the primary node in a MongoDB replica set?",
+      "expectedSource": "replica-set-members",
+      "retrievedSources": [
+        {
+          "chunkId": "replication-0005",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.9034435749053955
+        },
+        {
+          "chunkId": "replica-set-members-0000",
+          "documentId": "replica-set-members",
+          "title": "Replica Set Members",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/replica-set-members/",
+          "score": 0.889706015586853
+        },
+        {
+          "chunkId": "replication-0007",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8882777690887451
+        },
+        {
+          "chunkId": "replication-0008",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8843346834182739
+        },
+        {
+          "chunkId": "replication-0011",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8838845491409302
+        }
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 542
+    },
+    {
+      "id": "Q028",
+      "category": "replication",
+      "question": "How does MongoDB replication provide high availability?",
+      "expectedSource": "replication",
+      "retrievedSources": [
+        {
+          "chunkId": "replication-0000",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8874694108963013
+        },
+        {
+          "chunkId": "introduction-0006",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8844757080078125
+        },
+        {
+          "chunkId": "replica-set-members-0000",
+          "documentId": "replica-set-members",
+          "title": "Replica Set Members",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/replica-set-members/",
+          "score": 0.8795638680458069
+        },
+        {
+          "chunkId": "replication-0001",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8794294595718384
+        },
+        {
+          "chunkId": "replication-0004",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8755937814712524
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 498
+    },
+    {
+      "id": "Q029",
+      "category": "change-streams",
+      "question": "What are MongoDB change streams?",
+      "expectedSource": "change-streams",
+      "retrievedSources": [
+        {
+          "chunkId": "change-streams-0001",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.906590461730957
+        },
+        {
+          "chunkId": "change-streams-0000",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.9021623730659485
+        },
+        {
+          "chunkId": "replication-0033",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.89680016040802
+        },
+        {
+          "chunkId": "change-streams-0142",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8929132223129272
+        },
+        {
+          "chunkId": "change-streams-0003",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8821797966957092
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 519
+    },
+    {
+      "id": "Q030",
+      "category": "change-streams",
+      "question": "What MongoDB deployment types support change streams?",
+      "expectedSource": "change-streams",
+      "retrievedSources": [
+        {
+          "chunkId": "change-streams-0004",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.9004409909248352
+        },
+        {
+          "chunkId": "replication-0033",
+          "documentId": "replication",
+          "title": "Replication",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/replication/",
+          "score": 0.8935804963111877
+        },
+        {
+          "chunkId": "change-streams-0003",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8929480314254761
+        },
+        {
+          "chunkId": "sharding-0039",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.8919730186462402
+        },
+        {
+          "chunkId": "change-streams-0001",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8918329477310181
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 542
+    },
+    {
+      "id": "Q031",
+      "category": "change-streams",
+      "question": "Can MongoDB change streams filter for specific types of changes?",
+      "expectedSource": "change-streams",
+      "retrievedSources": [
+        {
+          "chunkId": "change-streams-0001",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8910256624221802
+        },
+        {
+          "chunkId": "change-streams-0047",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8815123438835144
+        },
+        {
+          "chunkId": "change-streams-0063",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8797351121902466
+        },
+        {
+          "chunkId": "change-streams-0000",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8764022588729858
+        },
+        {
+          "chunkId": "change-streams-0051",
+          "documentId": "change-streams",
+          "title": "Change Streams",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/changeStreams/",
+          "score": 0.8760351538658142
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 581
+    },
+    {
+      "id": "Q032",
+      "category": "sharding",
+      "question": "What is sharding in MongoDB and why is it used?",
+      "expectedSource": "sharding",
+      "retrievedSources": [
+        {
+          "chunkId": "sharding-0002",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.8995124101638794
+        },
+        {
+          "chunkId": "introduction-0007",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8858003616333008
+        },
+        {
+          "chunkId": "sharding-0016",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.8748629093170166
+        },
+        {
+          "chunkId": "sharding-0015",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.8731780052185059
+        },
+        {
+          "chunkId": "sharding-0007",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.8709869980812073
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 515
+    },
+    {
+      "id": "Q033",
+      "category": "sharding",
+      "question": "What are the components of a MongoDB sharded cluster?",
+      "expectedSource": "sharded-cluster-components",
+      "retrievedSources": [
+        {
+          "chunkId": "sharding-0007",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.8950372338294983
+        },
+        {
+          "chunkId": "sharded-cluster-components-0010",
+          "documentId": "sharded-cluster-components",
+          "title": "Sharded Cluster Components",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/sharded-cluster-components/",
+          "score": 0.888526439666748
+        },
+        {
+          "chunkId": "sharded-cluster-components-0000",
+          "documentId": "sharded-cluster-components",
+          "title": "Sharded Cluster Components",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/sharded-cluster-components/",
+          "score": 0.8879358172416687
+        },
+        {
+          "chunkId": "sharding-0016",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.8834227323532104
+        },
+        {
+          "chunkId": "sharding-0027",
+          "documentId": "sharding",
+          "title": "Sharding",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/sharding/",
+          "score": 0.883004367351532
+        }
+      ],
+      "hit1": false,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 502
+    },
+    {
+      "id": "Q034",
+      "category": "time-series",
+      "question": "What is a time series collection in MongoDB?",
+      "expectedSource": "time-series",
+      "retrievedSources": [
+        {
+          "chunkId": "time-series-0015",
+          "documentId": "time-series",
+          "title": "Time Series Collections",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/timeseries-collections/",
+          "score": 0.9155173301696777
+        },
+        {
+          "chunkId": "time-series-0005",
+          "documentId": "time-series",
+          "title": "Time Series Collections",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/timeseries-collections/",
+          "score": 0.9107662439346313
+        },
+        {
+          "chunkId": "time-series-0008",
+          "documentId": "time-series",
+          "title": "Time Series Collections",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/timeseries-collections/",
+          "score": 0.9097840785980225
+        },
+        {
+          "chunkId": "time-series-0016",
+          "documentId": "time-series",
+          "title": "Time Series Collections",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/timeseries-collections/",
+          "score": 0.9072261452674866
+        },
+        {
+          "chunkId": "time-series-0013",
+          "documentId": "time-series",
+          "title": "Time Series Collections",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/timeseries-collections/",
+          "score": 0.9064570069313049
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 528
+    },
+    {
+      "id": "Q035",
+      "category": "fundamentals",
+      "question": "What is MongoDB and what type of database is it?",
+      "expectedSource": "introduction",
+      "retrievedSources": [
+        {
+          "chunkId": "introduction-0000",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8700631856918335
+        },
+        {
+          "chunkId": "query-api-0008",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8650498390197754
+        },
+        {
+          "chunkId": "document-0000",
+          "documentId": "document",
+          "title": "Documents",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/document/",
+          "score": 0.8633865118026733
+        },
+        {
+          "chunkId": "introduction-0001",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.8628997206687927
+        },
+        {
+          "chunkId": "query-api-0000",
+          "documentId": "query-api",
+          "title": "MongoDB Query API",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/query-api/",
+          "score": 0.8620973229408264
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 589
+    },
+    {
+      "id": "Q036",
+      "category": "fundamentals",
+      "question": "What is the relationship between databases, collections, and documents in MongoDB?",
+      "expectedSource": "databases-and-collections",
+      "retrievedSources": [
+        {
+          "chunkId": "databases-and-collections-0000",
+          "documentId": "databases-and-collections",
+          "title": "Databases and Collections",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/databases-and-collections/",
+          "score": 0.8909426927566528
+        },
+        {
+          "chunkId": "document-0000",
+          "documentId": "document",
+          "title": "Documents",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/document/",
+          "score": 0.8800778388977051
+        },
+        {
+          "chunkId": "introduction-0003",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.879001259803772
+        },
+        {
+          "chunkId": "databases-and-collections-0008",
+          "documentId": "databases-and-collections",
+          "title": "Databases and Collections",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/core/databases-and-collections/",
+          "score": 0.8764743208885193
+        },
+        {
+          "chunkId": "introduction-0001",
+          "documentId": "introduction",
+          "title": "Introduction to MongoDB",
+          "sourceUrl": "https://www.mongodb.com/docs/v8.0/introduction/",
+          "score": 0.876152515411377
+        }
+      ],
+      "hit1": true,
+      "hit3": true,
+      "hit5": true,
+      "latencyMs": 561
+    }
+  ]
+}
