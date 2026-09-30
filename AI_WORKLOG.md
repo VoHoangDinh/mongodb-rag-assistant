@@ -290,4 +290,36 @@ The `@google/genai` JS SDK accepts an array of strings directly in `contents` �
 
 ---
 
+---
+
+## Phase 10A — Evaluation Dataset Design
+
+**Date:** 2026-09-30
+**Task:** Create a 40-question evaluation dataset grounded in actual source documents
+**AI Tool:** Kiro
+
+**Process:**
+1. Inspected all 33 documents in `data/processed/documents.json` — read actual text for every topic before writing any question
+2. Wrote questions and ground truths grounded in the actual document text (no invented facts)
+3. Assigned every in-scope question an `expectedSource` (documentId) and `expectedSourceUrl`
+4. Ran automated verification: checked every expectedSource against `documentId` list and every expectedSourceUrl against `sourceUrl` list in the documents dataset
+
+**Verification result:** 36/36 in-scope sources confirmed — zero issues.
+
+**Dataset stats:**
+- Total questions: 40
+- In-scope: 36
+- Out-of-scope: 4
+- Categories: aggregation(5), indexes(5), queries(5), data-modeling(5), transactions(4), replication(4), change-streams(3), sharding(2), time-series(1), fundamentals(2), out-of-scope(4)
+
+**Design decisions:**
+- Ground truths are concise and factual, not copied verbatim from docs — they summarize the key facts needed to evaluate whether the generated answer is correct
+- Out-of-scope questions use well-known non-MongoDB topics so the "insufficient information" response is clearly correct
+- Expected sources match the most relevant document — for questions that could be answered by multiple docs, the most specific document was chosen
+- `groundTruth: "insufficient"` for all out-of-scope questions — the evaluation runner will check that the system response contains the sentinel phrase
+
+**Problems encountered:** None. Reading source documents before writing questions prevented any invented facts.
+
+---
+
 <!-- New entries will be added as each phase is completed -->
