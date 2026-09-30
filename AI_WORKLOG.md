@@ -356,4 +356,33 @@ Incremental saves are critical for long-running evaluation scripts against rate-
 
 ---
 
+---
+
+## Phase 10C — Evaluation Metrics
+
+**Date:** 2026-09-30
+**Task:** Implement `evaluation/calculate-metrics.js` to compute retrieval, citation, answer quality, and latency metrics
+**AI Tool:** Kiro
+
+**Metrics implemented:**
+- Retrieval: Hit@1, Hit@3, Hit@5 (exact documentId match)
+- Citation: precision (cited ⊆ retrieved), coverage (expectedSource cited)
+- Out-of-scope: % correctly returning insufficient + empty citations
+- Answer quality: keyword overlap (correct ≥65%, partial 40–64%, incorrect <40%)
+- Latency: avg/P50/P95 for retrieval, generation, total
+- Per-category breakdown
+
+**Preliminary results on 6/40 questions:**
+- Hit@5: 100% | Hit@3: 100% | Hit@1: 83%
+- Citation precision: 100% | Coverage: 100%
+- Answer quality: 83% correct, 17% partially_correct
+- Retrieval latency P50: 632ms | Generation P50: 14,081ms (includes 503 retries)
+
+**Answer quality limitation explicitly documented:**
+Keyword overlap is a conservative proxy. Q005 was marked `partially_correct` (47% keyword match) despite the generated answer being factually correct — just phrased differently from the ground truth. This is expected and documented in the methodology section of report.md.
+
+**Problems encountered:** None. The script works cleanly on partial results and correctly signals preliminary status.
+
+---
+
 <!-- New entries will be added as each phase is completed -->
