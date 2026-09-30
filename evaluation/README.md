@@ -102,13 +102,64 @@ Verification result: **36/36 in-scope sources confirmed** (zero issues).
 
 ---
 
+## Running the Evaluation
+
+### Smoke test (3 questions)
+```bash
+node evaluation/run-evaluation.js --limit 3
+```
+
+### Full run (all 40 questions)
+```bash
+node evaluation/run-evaluation.js
+```
+
+### Resume after a failure or quota limit
+The runner saves results after every question. If it stops early, simply re-run:
+```bash
+node evaluation/run-evaluation.js
+```
+Already-completed questions are automatically skipped.
+
+### Start from a specific question
+```bash
+node evaluation/run-evaluation.js --start Q010
+```
+
+### Adjust delay between questions
+```bash
+node evaluation/run-evaluation.js --delay 2000
+```
+
+### Results file
+`evaluation/results/results.json`
+
 ## Results Directory
 
-Evaluation run results are stored in `evaluation/results/`.
+`evaluation/results/results.json` — all evaluation results (one object per question).
 
-| File | Description |
-|------|-------------|
-| `baseline-800.csv` | Results for 800-character chunks (Phase 14) |
-| `experiment-300.csv` | Results for 300-character chunks (Phase 14) |
+Each result record contains:
 
-Results are populated in Phase 13 (evaluation runner) and Phase 14 (experiment).
+```json
+{
+  "id": "Q001",
+  "category": "aggregation",
+  "scope": "in_scope",
+  "question": "...",
+  "groundTruth": "...",
+  "expectedSource": "aggregation-pipeline",
+  "expectedSourceUrl": "https://...",
+  "generatedAnswer": "...",
+  "insufficient": false,
+  "retrievedSources": [{ "chunkId": "...", "documentId": "...", "title": "...", "sourceUrl": "...", "score": 0.88 }],
+  "citations": [{ "title": "...", "sourceUrl": "...", "documentId": "...", "score": 0.88 }],
+  "retrievalLatencyMs": 600,
+  "generationLatencyMs": 5000,
+  "totalLatencyMs": 5600,
+  "status": "success"
+}
+```
+
+Experiment results (Phase 14) will be saved as:
+- `evaluation/results/results-300.json` (300-char chunks)
+- `evaluation/results/results-800.json` (800-char chunks)

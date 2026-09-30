@@ -322,4 +322,38 @@ The `@google/genai` JS SDK accepts an array of strings directly in `contents` �
 
 ---
 
+---
+
+## Phase 10B — Evaluation Runner
+
+**Date:** 2026-09-30
+**Task:** Create `evaluation/run-evaluation.js` to run the pipeline against all 40 questions
+**AI Tool:** Kiro
+
+**Design decisions:**
+
+1. Reuses `generate()` from `generation.service.js` — no new retrieval or generation logic
+2. Incremental save: writes `results.json` after every question — a crash or quota error loses nothing
+3. Resume: loads existing results on startup, skips questions with `status: "success"` — re-runs errors
+4. Hard stop on quota (HTTP 429): records the error, saves results, prints resume instructions, exits cleanly — avoids wasting quota by retrying all remaining questions
+5. `--limit`, `--start`, `--delay` flags for flexible testing and recovery
+
+**Smoke test results:**
+- Q001 (aggregation, in-scope): ✅ success, 2 citations, answer grounded
+- Q002 (aggregation, in-scope): ✅ success, 3 citations
+- Q003 (aggregation, in-scope): ✅ success, 3 citations
+- Q004 (aggregation, in-scope): ✅ success after resume (Q001-Q003 correctly skipped)
+- Q037 (out-of-scope): ✅ success, citations=0, insufficient=true ✅
+
+**All required fields verified in results.json:**
+`id, category, scope, question, groundTruth, expectedSource, expectedSourceUrl, generatedAnswer, insufficient, retrievedSources, citations, retrievalLatencyMs, generationLatencyMs, totalLatencyMs, status`
+
+**Problems encountered:**
+- Gemini `gemini-flash-latest` frequently returns HTTP 503 under high load. The existing exponential backoff in `generation.service.js` handles this — runner waits up to 62s per question on retries. This is expected behavior under free-tier quotas.
+
+**Lesson:**
+Incremental saves are critical for long-running evaluation scripts against rate-limited APIs. Losing 35 completed results because question 36 hit a quota error would be frustrating and expensive.
+
+---
+
 <!-- New entries will be added as each phase is completed -->
