@@ -565,4 +565,50 @@ at all". This unblocks in-scope questions while still correctly handling out-of-
 
 ---
 
+---
+
+## Phase 11 — Final Documentation Preparation
+
+**Date:** 2026-09-30
+**Task:** Rewrite README.md as professional final-project documentation
+**AI Tool:** Kiro
+
+**Files reviewed before writing:**
+- package.json (scripts, exact dependency versions)
+- evaluation/results/results.json (32/40 completed, 31 success, 1 error)
+- evaluation/experiments/results/chunk-300/retrieval-results.json (actual metrics)
+- evaluation/experiments/results/chunk-800/retrieval-results.json (actual metrics)
+- evaluation/experiments/comparison.md
+- evaluation/experiments/failure-analysis.md
+- backend/src/services/generation.service.js (SYSTEM_PROMPT, model config)
+- backend/src/services/retrieval.service.js ($vectorSearch parameters)
+- .env.example (variable names only, no values)
+- evaluation/questions.json (40 questions confirmed)
+
+**Files modified:**
+- README.md — complete rewrite into structured final-project documentation
+
+**Important decisions:**
+1. All metrics sourced from actual JSON result files — nothing invented
+2. Evaluation status clearly marked as 32/40 (PENDING), not presented as final
+3. `calculate-metrics.js` noted as post-completion tool only
+4. No features claimed that are not implemented (no reranking, no hybrid search, no frontend)
+5. Chunk experiment documented with actual numbers from retrieval-results.json
+6. Technology stack verified against package.json before documenting versions
+
+**Evaluation status at time of writing:**
+- Total questions: 40
+- Completed (end-to-end): 32
+- Remaining: 8 (Q033–Q040)
+- Final answer quality / citation / latency metrics: PENDING
+- Chunking experiment (retrieval): COMPLETED (36/36 for both configs)
+- Failure analysis: COMPLETED
+
+**Secrets check:**
+- No API keys, MongoDB URIs, passwords, or credentials added to README.md
+- .env remains in .gitignore
+- All credential references use placeholder text from .env.example
+
+---
+
 <!-- New entries will be added as each phase is completed -->
