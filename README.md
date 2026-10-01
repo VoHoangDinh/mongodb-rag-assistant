@@ -451,6 +451,12 @@ node evaluation/experiments/test-retrieval.js --experiment chunk-800
 
 ---
 
+## 🎥 Demo Video
+
+[Watch the MongoDB Knowledge Assistant Demo on Google Drive](https://drive.google.com/drive/folders/1M3L0bqti-UUfCeK9G3aVtyyrNAU8RKPW?usp=sharing)
+
+---
+
 ## 15. Demo Flow
 
 ```bash
